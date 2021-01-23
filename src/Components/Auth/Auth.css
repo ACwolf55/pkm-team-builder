@@ -1,0 +1,13 @@
+.no-auth{
+    margin-top:25px;
+      display: flex;
+      flex-direction: column;
+      background-color: #c90505;
+      text-align: center;
+      height: 50vh;
+      width: 14vw;
+      border-width: 10px;
+      border-radius: 25px;
+      margin:15px
+    
+  }

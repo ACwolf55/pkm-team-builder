@@ -1,0 +1,14 @@
+.all-pkm-teams{
+    display: flex;
+    flex-direction: row;
+    
+ 
+
+
+}
+
+.team-display{
+    display: flex;
+    flex-direction: column;
+
+}

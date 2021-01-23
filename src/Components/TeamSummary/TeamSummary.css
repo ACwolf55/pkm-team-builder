@@ -1,0 +1,13 @@
+.team-summary{
+    display: flex;
+    background-color: #c90505;
+    height:18vh;
+    width: 25vw;
+    border-width: 10px;
+    margin-left:20vw;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    border-radius: 25px;
+    text-align: center;
+
+}

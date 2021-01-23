@@ -1,0 +1,12 @@
+header{
+    height:15vh;
+    width:100vw;
+    border-width: 10px;
+    background-color:#3b4cca;
+    color: #cfe1e4f1;
+    text-shadow: 1px 0px black;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 50px;
+    font-family: 'Bowlby One SC', cursive;
+  }
