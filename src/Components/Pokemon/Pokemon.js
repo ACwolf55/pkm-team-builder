@@ -1,34 +1,30 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import './Pokemon.css'
+import { connect } from 'react-redux'
+import { setPokemon } from '../../redux/pokemonReducer'
 
-export default class Pokemon extends Component {
+
+class Pokemon extends Component {
     constructor() {
         super();
         this.state = {
-            pkmName: '',
-            pkmDisplay: {},
-            pkmHp: null,
-            pkmAtk: null,
-            pkmDef: null,
-            pkmSpecAtk: null,
-            pkmSpecDef: null,
-            pkmSpeed: null,
-
-            mountedName:''
-
+            pkmName: ''
+            // pkmHp: null,
+            // pkmAtk: null,
+            // pkmDef: null,
+            // pkmSpecAtk: null,
+            // pkmSpecDef: null,
+            // pkmSpeed: null,
+            // mountedName:''
         };
-
     }
-
-
-
-
 
     getPokemon=(e)=> {
         e.preventDefault()
         axios.get(`https://pokeapi.co/api/v2/pokemon/${this.state.pkmName}`).then((res) => {
-            this.setState({
-
+            const pkmObj ={
+                pkmName: this.state.pkmName,
                 pkmHp: res.data.stats[0].base_stat,
                 pkmAtk: res.data.stats[1].base_stat,
                 pkmDef: res.data.stats[2].base_stat,
@@ -37,7 +33,10 @@ export default class Pokemon extends Component {
                 pkmSpeed: res.data.stats[5].base_stat,
 
                 mountedName: this.state.pkmName
-            })
+
+            }
+
+            this.props.setPokemon(pkmObj)
         })
 
     }
@@ -61,7 +60,7 @@ export default class Pokemon extends Component {
       }
 
     render() {
-        const {mountedName, pkmHp, pkmAtk, pkmDef, pkmSpecAtk, pkmSpecDef, pkmSpeed } = this.state
+        // const {mountedName, pkmHp, pkmAtk, pkmDef, pkmSpecAtk, pkmSpecDef, pkmSpeed } = this.props.pokemon
 
         return (
             <div className='pokemon-card'>
@@ -71,26 +70,29 @@ export default class Pokemon extends Component {
                         <p><button type='submit'>Find</button></p>
                     </form>
 
-                    <h3>{mountedName}</h3>
-                    <ul>
-                        <li>HP: {pkmHp}</li>
-                        <li>Attack: {pkmAtk}</li>
-                        <li>Defense: {pkmDef}</li>
-                        <li>Special Attack: {pkmSpecAtk}</li>
-                        <li>Special Defense: {pkmSpecDef}</li>
-                        <li>Speed: {pkmSpeed}</li>
-                    </ul>
-
+                    <h3>{this.props.pokemon.mountedName || null }</h3>
 
                 </div>
 
 
-
-
-
-            </div>
-
+                    <div className='pkm-stats'>
+                        <ul>
+                            <li>HP: {this.props.pokemon.pkmHp || null}</li>
+                            <li>Attack: {this.props.pokemon.pkmAtk || null}</li>
+                            <li>Defense: {this.props.pokemon.pkmDef || null}</li>
+                            <li>Special Attack: {this.props.pokemon.pkmSpecAtk || null}</li>
+                            <li>Special Defense: {this.props.pokemon.pkmSpecDef || null}</li>
+                            <li>Speed: {this.props.pokemon.pkmSpeed || null}</li>
+                        </ul>
+                    </div>
+        </div>
         )
-
     }
 }
+
+function mapStateToProps(reduxState) {
+    return reduxState
+
+}
+
+export default connect(mapStateToProps, { setPokemon })(Pokemon)

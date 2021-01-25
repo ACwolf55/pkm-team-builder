@@ -1,0 +1,22 @@
+form{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+}
+
+input[type=text] {
+    width: 100%;
+
+}
+
+.pkm-stats{
+    margin-bottom: 0px 0px 0px 0px;
+
+}
+
+#pkm-search-form{
+    display: flex;
+    flex-wrap: wrap;
+
+}

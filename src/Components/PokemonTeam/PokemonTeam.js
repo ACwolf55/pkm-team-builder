@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import { render } from '@testing-library/react';
 import Pokemon from '../Pokemon/Pokemon'
+import {connect} from 'react-redux'
 import './PokemonTeam.css'
 
-export default class PokemonTeam extends Component {
+class PokemonTeam extends Component {
     constructor() {
         super();
         this.state = {
@@ -13,15 +13,17 @@ export default class PokemonTeam extends Component {
     }
 
 render(){
+    const {pokemon} = this.props.pokemonReducer
+    console.log(pokemon)
     return(
     <div className='pokemon-team-box'>
         <div className='pokemon-team'>
-            <Pokemon/>
-            <Pokemon/>
-            <Pokemon/>
-            <Pokemon/>
-            <Pokemon/>
-            <Pokemon/>
+            <Pokemon pokemon={pokemon[0]}/>
+            <Pokemon pokemon={pokemon[1]}/>
+            <Pokemon pokemon={pokemon[2]}/>
+            <Pokemon pokemon={pokemon[3]}/>
+            <Pokemon pokemon={pokemon[4]}/>
+            <Pokemon pokemon={pokemon[5]}/>
         </div>
 
         <div className='save-team-box'>
@@ -34,4 +36,9 @@ render(){
 
 }
 }
+function mapStateToProps(reduxState) {
+    return reduxState
 
+}
+
+export default connect(mapStateToProps, { })(PokemonTeam)
