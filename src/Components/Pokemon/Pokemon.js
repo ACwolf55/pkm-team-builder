@@ -16,14 +16,14 @@ class Pokemon extends Component {
             pkmSpecAtk: null,
             pkmSpecDef: null,
             pkmSpeed: null,
-            mountedName:''
+            mountedName: ''
         };
     }
 
-    getPokemon=(e)=> {
+    getPokemon = (e) => {
         e.preventDefault()
         axios.get(`https://pokeapi.co/api/v2/pokemon/${this.state.pkmName}`).then((res) => {
-            const pkmObj ={
+            const pkmObj = {
                 pkmName: this.state.pkmName,
                 pkmHp: res.data.stats[0].base_stat,
                 pkmAtk: res.data.stats[1].base_stat,
@@ -32,32 +32,20 @@ class Pokemon extends Component {
                 pkmSpecDef: res.data.stats[4].base_stat,
                 pkmSpeed: res.data.stats[5].base_stat,
 
+                pokeSpot: this.props.pokeSpot,
+
                 mountedName: this.state.pkmName
-
             }
-
             this.props.setPokemon(pkmObj)
         })
-
     }
 
-    // pkmNameMount = (e) => {
-    //     e.preventDefault()
-
-    //     this.setState({
-    //         pkmName: e.target.value
-    //     })
-
-    //     this.getPokemonStats()
-    // }
-
-
-      pkmNameInput=(e)=>{
+    pkmNameInput = (e) => {
         this.setState({
             pkmName: e.target.value
         })
 
-      }
+    }
 
     render() {
         // const {mountedName, pkmHp, pkmAtk, pkmDef, pkmSpecAtk, pkmSpecDef, pkmSpeed } = this.props.pokemon
@@ -66,26 +54,26 @@ class Pokemon extends Component {
             <div className='pokemon-card'>
                 <div id='pkm-search-form'>
                     <form onSubmit={this.getPokemon}>
-                        <p><input type='text' placeholder='pokemon name' name='pkmName' onChange={this.pkmNameInput}/></p>
+                        <p><input type='text' placeholder='pokemon name' name='pkmName' onChange={this.pkmNameInput} /></p>
                         <p><button type='submit'>Find</button></p>
                     </form>
 
-                    <h3>{this.props.pokemon.mountedName }</h3>
+                    <h3>{this.props.pokemon.mountedName}</h3>
 
                 </div>
 
 
-                    <div className='pkm-stats'>
-                        <ul>
-                            <li>HP: {this.props.pokemon.pkmHp }</li>
-                            <li>Attack: {this.props.pokemon.pkmAtk }</li>
-                            <li>Defense: {this.props.pokemon.pkmDef }</li>
-                            <li>Special Attack: {this.props.pokemon.pkmSpecAtk }</li>
-                            <li>Special Defense: {this.props.pokemon.pkmSpecDef }</li>
-                            <li>Speed: {this.props.pokemon.pkmSpeed }</li>
-                        </ul>
-                    </div>
-        </div>
+                <div className='pkm-stats'>
+                    <ul>
+                        <li>HP: {this.props.pokemon.pkmHp}</li>
+                        <li>Attack: {this.props.pokemon.pkmAtk}</li>
+                        <li>Defense: {this.props.pokemon.pkmDef}</li>
+                        <li>Special Attack: {this.props.pokemon.pkmSpecAtk}</li>
+                        <li>Special Defense: {this.props.pokemon.pkmSpecDef}</li>
+                        <li>Speed: {this.props.pokemon.pkmSpeed}</li>
+                    </ul>
+                </div>
+            </div>
         )
     }
 }

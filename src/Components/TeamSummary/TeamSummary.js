@@ -13,15 +13,29 @@ export default class TeamSummary extends Component {
         }
     }
 
-render(){
-    return(
-        <div className='team-summary'>
-            <h3>Highest stat total pkm: </h3>
-            <h3>Fastest pkm: </h3>
+    render() {
+        return (
+            <div className='team-summary'>
+                <h2>Team Summary</h2>
+
+                <table className='summary-table'>
+                    <tr>
+                        <th>Highest Stat total</th>
+                        <th>Best Attack</th>
+                        <th>Best Speed</th>
+                    </tr>
+                    <tr>
+                        <td>res.data</td>
+                        <td>res.data</td>
+                        <td>res.data</td>
+                    </tr>
+                </table>
 
 
-        </div>
-    )
 
-}
+
+            </div>
+        )
+
+    }
 }

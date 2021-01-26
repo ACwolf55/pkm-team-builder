@@ -3,14 +3,14 @@ import {Route, Switch} from 'react-router-dom'
 import Auth from './Components/Auth/Auth'
 import Home from './Components/Home/Home'
 import Chat from './Components/Chat/Chat'
-import AllTeamDisplay from './Components/AllTeamDisplay/AllTeamDisplay'
+import AllUserTeams from './Components/AllTeamDisplay/AllUserTeams'
 
 export default (
     <Switch>
         <Route exact path='/' component={Auth} />
         <Route path='/Home' component={Home} />
         <Route path='/Chat' component={Chat} />
-        <Route path='/AllTeamDisplay' component={AllTeamDisplay} />
+        <Route path='/AllUserTeams' component={AllUserTeams} />
     </Switch>
 
 )
