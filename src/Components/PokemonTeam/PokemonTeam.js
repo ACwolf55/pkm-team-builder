@@ -15,15 +15,25 @@ class PokemonTeam extends Component {
 render(){
     const {pokemon} = this.props.pokemonReducer
     console.log(pokemon)
+    const emptyPkm = {
+        pkmName: '',
+        pkmHp: null,
+        pkmAtk: null,
+        pkmDef: null,
+        pkmSpecAtk: null,
+        pkmSpecDef: null,
+        pkmSpeed: null,
+        mountedName:''
+    };
     return(
     <div className='pokemon-team-box'>
         <div className='pokemon-team'>
-            <Pokemon pokemon={pokemon[0]}/>
-            <Pokemon pokemon={pokemon[1]}/>
-            <Pokemon pokemon={pokemon[2]}/>
-            <Pokemon pokemon={pokemon[3]}/>
-            <Pokemon pokemon={pokemon[4]}/>
-            <Pokemon pokemon={pokemon[5]}/>
+            <Pokemon pokemon={pokemon[0] || emptyPkm}/>
+            <Pokemon pokemon={pokemon[1] || emptyPkm}/>
+            <Pokemon pokemon={pokemon[2] || emptyPkm}/>
+            <Pokemon pokemon={pokemon[3] || emptyPkm}/>
+            <Pokemon pokemon={pokemon[4] || emptyPkm}/>
+            <Pokemon pokemon={pokemon[5] || emptyPkm}/>
         </div>
 
         <div className='save-team-box'>

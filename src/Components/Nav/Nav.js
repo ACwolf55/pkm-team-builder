@@ -15,6 +15,8 @@ class Nav extends Component {
 
     }
 
+    
+
 
     logoutButton =()=> {
         axios.get('/auth/logout')

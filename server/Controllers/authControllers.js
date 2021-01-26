@@ -19,7 +19,7 @@ module.exports = {
     const registeredUser = await db.register([user_name, hash])
     console.log(registeredUser)
     const user = registeredUser[0]
-    req.session.user = { user_name: user.user_name, user_id: user.pkm_user_id }
+    req.session.user = { user_name: user.user_name, id: user.pkm_user_id }
     return res.status(201).send(req.session.user)
 
   },
@@ -35,13 +35,22 @@ module.exports = {
     if (!isAuth) {
       return res.status(403).send('Incorrect Password')
     }
-    req.session.user = { id: user.pkm_user_id, user_name: user.user_name }
+    req.session.user = { user_name: user.user_name, id: user.pkm_user_id }
     return res.send(req.session.user)
   },
 
   logout: (req, res) => {
     req.session.destroy()
     return res.sendStatus(200)
+  },
+
+  getSession: (req,res) => {
+    if(req.session.user){
+      res.status(200).send(req.session.user)
+    }
+    else{
+      res.sendStatus(200)
+    }
   }
 
 

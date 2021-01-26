@@ -36,6 +36,7 @@ app.use(session({
 app.post('/auth/register',authCtrl.register)
 app.post('/auth/login', authCtrl.login)
 app.get('/auth/logout', authCtrl.logout)
+app.get('/auth/session', authCtrl.getSession)
 
 // User Teams Endpoints:
 // app.get('/user/user_teams',userCtrl.allTeams)

@@ -9,14 +9,14 @@ class Pokemon extends Component {
     constructor() {
         super();
         this.state = {
-            pkmName: ''
-            // pkmHp: null,
-            // pkmAtk: null,
-            // pkmDef: null,
-            // pkmSpecAtk: null,
-            // pkmSpecDef: null,
-            // pkmSpeed: null,
-            // mountedName:''
+            pkmName: '',
+            pkmHp: null,
+            pkmAtk: null,
+            pkmDef: null,
+            pkmSpecAtk: null,
+            pkmSpecDef: null,
+            pkmSpeed: null,
+            mountedName:''
         };
     }
 
@@ -61,7 +61,7 @@ class Pokemon extends Component {
 
     render() {
         // const {mountedName, pkmHp, pkmAtk, pkmDef, pkmSpecAtk, pkmSpecDef, pkmSpeed } = this.props.pokemon
-
+        console.log(this.props.pokemon)
         return (
             <div className='pokemon-card'>
                 <div id='pkm-search-form'>
@@ -70,19 +70,19 @@ class Pokemon extends Component {
                         <p><button type='submit'>Find</button></p>
                     </form>
 
-                    <h3>{this.props.pokemon.mountedName || null }</h3>
+                    <h3>{this.props.pokemon.mountedName }</h3>
 
                 </div>
 
 
                     <div className='pkm-stats'>
                         <ul>
-                            <li>HP: {this.props.pokemon.pkmHp || null}</li>
-                            <li>Attack: {this.props.pokemon.pkmAtk || null}</li>
-                            <li>Defense: {this.props.pokemon.pkmDef || null}</li>
-                            <li>Special Attack: {this.props.pokemon.pkmSpecAtk || null}</li>
-                            <li>Special Defense: {this.props.pokemon.pkmSpecDef || null}</li>
-                            <li>Speed: {this.props.pokemon.pkmSpeed || null}</li>
+                            <li>HP: {this.props.pokemon.pkmHp }</li>
+                            <li>Attack: {this.props.pokemon.pkmAtk }</li>
+                            <li>Defense: {this.props.pokemon.pkmDef }</li>
+                            <li>Special Attack: {this.props.pokemon.pkmSpecAtk }</li>
+                            <li>Special Defense: {this.props.pokemon.pkmSpecDef }</li>
+                            <li>Speed: {this.props.pokemon.pkmSpeed }</li>
                         </ul>
                     </div>
         </div>
