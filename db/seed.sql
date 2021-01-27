@@ -4,20 +4,20 @@ user_name VARCHAR(18),
 hash TEXT
 );
 
-CREATE TABLE Pokemon_members (
-Pokemon_team_id SERIAL PRIMARY KEY,
+CREATE TABLE pokemon_team (
+pokemon_team_id SERIAL PRIMARY KEY,
+pkm_user_id INT REFERENCES pkm_users(pkm_user_id),
+team_name VARCHAR(30)
+);
+
+CREATE TABLE pokemon_members (
+pokemon_team_id INT REFERENCES pokemon_team(pokemon_team_id),
 pokemon_1 TEXT,
 pokemon_2 TEXT,
 pokemon_3 TEXT,
 pokemon_4 TEXT,
 pokemon_5 TEXT,
 pokemon_6 TEXT
-);
-
-CREATE TABLE Pokemon_team(
-Pokemon_team_id INT REFERENCES pokemon_members(Pokemon_team_id),
-pkm_user INT REFERENCES pkm_users(pkm_user_id)
-team_team VARCHAR(30)
 );
 
 INSERT INTO pkm_users
@@ -30,34 +30,23 @@ INSERT INTO pkm_users
 VALUES
 ('Erika','grasspkm');
 
-INSERT INTO pokemon_members
-(pokemon_1,pokemon_2,pokemon_3,pokemon_4,pokemon_5,pokemon_6)
+INSERT INTO pokemon_team
+(pkm_user_id,team_name)
 VALUES
-('arcanine','cinccino','golem','venusaur','kabutops','furret');
-
-INSERT INTO pokemon_members
-(pokemon_1,pokemon_2,pokemon_3,pokemon_4,pokemon_5,pokemon_6)
-VALUES
-('feraligatr','nidoking','lilligant','lycanroc-midday','raichu-alola','pidgeot-mega');
+(1,'team1');
 
 INSERT INTO pokemon_team
-(pokemon_team_id,pkm_user)
+(pkm_user_id,team_name)
 VALUES
-(1,1);
-
-INSERT INTO pokemon_team
-(pokemon_team_id,pkm_user)
-VALUES
-(2,1);
+(1,'team2');
 
 INSERT INTO pokemon_members
-(pokemon_1,pokemon_2,pokemon_3,pokemon_4,pokemon_5,pokemon_6)
+(pokemon_team_id,pokemon_1,pokemon_2,pokemon_3,pokemon_4,pokemon_5,pokemon_6)
 VALUES
-('vileplume','victreebel','tangela','gloom','bellossom','comfey');
+(2,'arcanine','cinccino','golem','venusaur','kabutops','furret');
 
-INSERT INTO pokemon_team
-(pokemon_team_id,pkm_user)
+INSERT INTO pokemon_members
+(pokemon_team_id,pokemon_1,pokemon_2,pokemon_3,pokemon_4,pokemon_5,pokemon_6)
 VALUES
-(2,1);
-
+(3,'feraligatr','nidoking','lilligant','lycanroc-midday','raichu-alola','pidgeot-mega');
 

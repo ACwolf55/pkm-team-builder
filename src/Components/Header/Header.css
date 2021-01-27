@@ -1,5 +1,5 @@
 header{
-    height:15vh;
+    height:13vh;
     width:100vw;
     border-width: 10px;
     background-color:#3b4cca;
@@ -10,3 +10,10 @@ header{
     font-size: 50px;
     font-family: 'Bowlby One SC', cursive;
   }
+
+  img{
+    height: 5vh;
+    width:5vh;
+    background-color:transparent;
+  }
+

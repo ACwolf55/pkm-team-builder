@@ -19,8 +19,10 @@ function Header(props) {
   return(
     <Link to='/Home' className='home-link'>
      <header>
-      Pokemon Team Builder
+      Pokemon Team Builder   <img src="https://www.pikpng.com/pngl/m/59-590145_pokeball-8-bit-pixel-art-pokemon-clipart.png" alt="Pokeball - 8 Bit Pixel Art Pokemon Clipart@pikpng.com"></img>
+   
      </header>
+     
     </Link>
     
 

@@ -22,6 +22,7 @@ class Pokemon extends Component {
 
     getPokemon = (e) => {
         e.preventDefault()
+        const {pkmName} = 
         axios.get(`https://pokeapi.co/api/v2/pokemon/${this.state.pkmName}`).then((res) => {
             const pkmObj = {
                 pkmName: this.state.pkmName,
@@ -57,9 +58,8 @@ class Pokemon extends Component {
                         <p><input type='text' placeholder='pokemon name' name='pkmName' onChange={this.pkmNameInput} /></p>
                         <p><button type='submit'>Find</button></p>
                     </form>
-
-                    <h3>{this.props.pokemon.mountedName}</h3>
-
+                    <h2>{this.props.pokemon.mountedName}</h2>
+                    <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/ultra-sun-ultra-moon/151.png"}/>
                 </div>
 
 
