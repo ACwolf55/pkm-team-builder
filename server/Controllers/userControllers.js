@@ -14,25 +14,44 @@ module.exports = {
         console.log(pkm)
         pkm[0].team_name = team_name
             res.status(201).send(pkm[0])
+        },
+
+    userTeamNames: async(req, res) => {
+            const db = req.app.get('db')
+
+            const teamNameId = await db.get_team_name(req.session.user.id)
+
+            return res.status(201).send(teamNameId)
+    
+    },
+    getTeam: async(req,res)=>{
+        const db = req.app.get('db')
+        const {teamid} = req.params
+        const pkmTeam = await db.get_team([teamid])
+        return res.status(201).send(pkmTeam)
     },
 
-    getAllUserTeams: (req, res) => {
+    getAllUserTeams: async (req, res) => {
         const db = req.app.get('db')
 
-        const allUserTeams = db.all_user_teams([req.session.user.id])
+        const allUserTeams = await db.all_user_teams([req.session.user.id])
 
         return res.status(201).send(allUserTeams)
 
     },
 
+    getTeamName: async(req,res) =>{
+        const db = req.app.get('db')
+        const {teamid} = req.params
+        const team_name = await db.get_team_name(teamid)
+        return res.status(201).send(team_name)
+    },
+        
+
     allTeams: (req, res) => {
         const db = req.app.get('db')
     },
 
-    getTeam: (req, res) => {
-        const db = req.app.get('db')
-
-    },
 
     editTeam: (req, res) => {
         const db = req.app.get('db')

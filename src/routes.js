@@ -3,7 +3,8 @@ import {Route, Switch} from 'react-router-dom'
 import Auth from './Components/Auth/Auth'
 import Home from './Components/Home/Home'
 import Chat from './Components/Chat/Chat'
-import AllUserTeams from './Components/AllTeamDisplay/AllUserTeams'
+import AllUserTeams from './Components/AllTeamTeams/AllUserTeams'
+import SavedPokemonTeam from './Components/SavedPokemonTeam/SavedPokemonTeam'
 
 export default (
     <Switch>
@@ -11,6 +12,7 @@ export default (
         <Route path='/Home' component={Home} />
         <Route path='/Chat' component={Chat} />
         <Route path='/AllUserTeams' component={AllUserTeams} />
+        <Route path='/SavedPokemonTeam/:teamid' component={SavedPokemonTeam}/>
     </Switch>
 
 )

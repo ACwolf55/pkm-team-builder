@@ -37,7 +37,7 @@ class Nav extends Component {
                 <h3>id: {id}</h3>
                 <button onClick={this.logoutButton}>Logout</button>
 
-                <Link to='/AllTeamDisplay' className='all-teams-link'>
+                <Link to='/AllUserTeams' className='all-teams-link'>
                     <h1>View all Team</h1>
                 </Link>
 

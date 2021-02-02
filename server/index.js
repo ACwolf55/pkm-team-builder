@@ -40,11 +40,12 @@ app.get('/auth/session', authCtrl.getSession)
 
 
 // User Teams Endpoints:
-app.post('/user/team/',userCtrl.saveTeam)
-app.get('/user/allUserTeams',userCtrl.getAllUserTeams)
+app.post('/user/team',userCtrl.saveTeam)
+app.get('/user/userTeamNames',userCtrl.userTeamNames)
+app.get('/user/team/SavedTeam/:teamid',userCtrl.getTeam)
+
 
 // app.get('/user/user_teams',userCtrl.allTeams)
-// app.get('/user/team/:id',userCtrl.getTeam)
 // app.put('/user/:id/team/:id',userCtrl.editTeam)
 // app.delete('/user/:id/team/:id',userCtrl.deleteTeam)
 

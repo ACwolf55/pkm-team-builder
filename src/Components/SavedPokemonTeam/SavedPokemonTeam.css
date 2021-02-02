@@ -1,0 +1,49 @@
+.saved-pkm-team-box{
+    display: flex;
+  flex-direction: row;
+  
+  background-color: #f37a7a;
+  border-radius: 25px;
+  width: 75vw;
+  height: 80vh;
+  padding: 0;
+  margin:50px 0 0px 100px;
+
+}
+
+.saved-pkm-pokemon-team{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 65vw;
+    margin:55px 0px 0 120px;
+    
+
+}
+
+.saved-pkm-card{
+    display: flex;
+    flex-direction: column;
+    background-color: #d13b3b;
+    height:30vh;
+    width: 20vw;
+    border: solid #000000;
+    border-width: 3px;
+    border-radius: 25px;
+    text-align: left;
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    font-size: 11px;
+    margin: -5px 0 0 15px;
+
+    /* #3b4cca  <-blue from header   */
+  
+
+}
+
+.pkm-sprite{
+    margin: -10px 0 5px 120px;
+    height: 30%;
+    width: 30%;
+
+}

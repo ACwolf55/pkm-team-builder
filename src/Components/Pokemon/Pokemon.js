@@ -1,86 +1,112 @@
-import React, { Component } from 'react';
-import axios from 'axios'
-import './Pokemon.css'
-import { connect } from 'react-redux'
-import { setPokemon } from '../../redux/pokemonReducer'
-
+import React, { Component } from "react";
+import axios from "axios";
+import "./Pokemon.css";
+import { connect } from "react-redux";
+import { setPokemon } from "../../redux/pokemonReducer";
 
 class Pokemon extends Component {
-    constructor() {
-        super();
-        this.state = {
-            pkmName: '',
-            pkmHp: null,
-            pkmAtk: null,
-            pkmDef: null,
-            pkmSpecAtk: null,
-            pkmSpecDef: null,
-            pkmSpeed: null,
-            mountedName: ''
+  constructor() {
+    super();
+    this.state = {
+      pkmName: "",
+      pkmHp: null,
+      pkmAtk: null,
+      pkmDef: null,
+      pkmSpecAtk: null,
+      pkmSpecDef: null,
+      pkmSpeed: null,
+      pkmSprite: "",
+      mountedName: "",
+    };
+  }
+
+  getPokemon = (e) => {
+    e.preventDefault();
+     axios
+      .get(`https://pokeapi.co/api/v2/pokemon/${this.state.pkmName}`)
+      .then((res) => {
+        const pkmObj = {
+          pkmName: this.state.pkmName,
+          pkmHp: res.data.stats[0].base_stat,
+          pkmAtk: res.data.stats[1].base_stat,
+          pkmDef: res.data.stats[2].base_stat,
+          pkmSpecAtk: res.data.stats[3].base_stat,
+          pkmSpecDef: res.data.stats[4].base_stat,
+          pkmSpeed: res.data.stats[5].base_stat,
+          pkmSprite: res.data.sprites.front_default,
+
+          pokeSpot: this.props.pokeSpot,
+
+          mountedName: this.state.pkmName,
         };
-    }
-
-    getPokemon = (e) => {
-        e.preventDefault()
-        const {pkmName} = 
-        axios.get(`https://pokeapi.co/api/v2/pokemon/${this.state.pkmName}`).then((res) => {
-            const pkmObj = {
-                pkmName: this.state.pkmName,
-                pkmHp: res.data.stats[0].base_stat,
-                pkmAtk: res.data.stats[1].base_stat,
-                pkmDef: res.data.stats[2].base_stat,
-                pkmSpecAtk: res.data.stats[3].base_stat,
-                pkmSpecDef: res.data.stats[4].base_stat,
-                pkmSpeed: res.data.stats[5].base_stat,
-
-                pokeSpot: this.props.pokeSpot,
-
-                mountedName: this.state.pkmName
-            }
-            this.props.setPokemon(pkmObj)
-        })
-    }
-
-    pkmNameInput = (e) => {
         this.setState({
-            pkmName: e.target.value
+            pkmSprite: res.data.sprites.front_default
         })
+        this.props.setPokemon(pkmObj);
+      });
+  };
 
-    }
+  pkmNameInput = (e) => {
+    this.setState({
+      pkmName: e.target.value,
+    });
+  };
 
-    render() {
-        // const {mountedName, pkmHp, pkmAtk, pkmDef, pkmSpecAtk, pkmSpecDef, pkmSpeed } = this.props.pokemon
-        console.log(this.props.pokemon)
-        return (
-            <div className='pokemon-card'>
-                <div id='pkm-search-form'>
-                    <form onSubmit={this.getPokemon}>
-                        <p><input type='text' placeholder='pokemon name' name='pkmName' onChange={this.pkmNameInput} /></p>
-                        <p><button type='submit'>Find</button></p>
-                    </form>
-                    <h2>{this.props.pokemon.mountedName}</h2>
-                    <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/ultra-sun-ultra-moon/151.png"}/>
-                </div>
-
-
-                <div className='pkm-stats'>
-                    <ul>
-                        <li>HP: {this.props.pokemon.pkmHp}</li>
-                        <li>Attack: {this.props.pokemon.pkmAtk}</li>
-                        <li>Defense: {this.props.pokemon.pkmDef}</li>
-                        <li>Special Attack: {this.props.pokemon.pkmSpecAtk}</li>
-                        <li>Special Defense: {this.props.pokemon.pkmSpecDef}</li>
-                        <li>Speed: {this.props.pokemon.pkmSpeed}</li>
-                    </ul>
-                </div>
+  render() {
+    const {
+      pkmHp,
+      pkmAtk,
+      pkmDef,
+      pkmSpecAtk,
+      pkmSpecDef,
+      pkmSpeed,
+      mountedName,
+      pkmSprite,
+    } = this.props.pokemon;
+    console.log(this.props)
+    return (
+      <div className="pokemon-card">
+        <div id="pkm-search-form">
+          <form onSubmit={this.getPokemon}>
+            <p>
+              <input
+                type="text"
+                placeholder="pokemon name"
+                name="pkmName"
+                onChange={this.pkmNameInput}
+              />
+            </p>
+            <p>
+              <button type="submit">Find</button>
+            </p>
+          </form>
+          <div className="pkm-name-sprite">
+            <h2>
+              <b>{mountedName}</b>
+            </h2>
+            <div className="pkm-sprite">
+              {this.state.pkmSprite === '' ? null : <img src={pkmSprite} /> }
             </div>
-        )
-    }
+          </div>
+        </div>
+
+        <div className="pkm-stats">
+          <ul>
+            <li>HP: {pkmHp}</li>
+            <li>Attack: {pkmAtk}</li>
+            <li>Defense: {pkmDef}</li>
+            <li>Special Attack: {pkmSpecAtk}</li>
+            <li>Special Defense: {pkmSpecDef}</li>
+            <li>Speed: {pkmSpeed}</li>
+          </ul>
+        </div>
+      </div>
+    );
+  }
 }
 
 function mapStateToProps(reduxState) {
-    return reduxState
-
+  return reduxState;
 }
 
-export default connect(mapStateToProps, { setPokemon })(Pokemon)
+export default connect(mapStateToProps, { setPokemon })(Pokemon);
