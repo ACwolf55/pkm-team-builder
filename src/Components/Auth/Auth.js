@@ -64,6 +64,7 @@ class Auth extends Component {
     const { user } = this.props;
     return (
       <div className="no-auth">
+        <div className='auth-form'>
         <input
           type="text"
           placeholder="Username"
@@ -76,6 +77,7 @@ class Auth extends Component {
           onChange={e => this.handlePasswordInput(e.target.value)} />
         <button onClick={this.login}>Log In</button>
         <button onClick={this.register} id="reg"> Register </button>
+        </div>
       </div>
     );
   }

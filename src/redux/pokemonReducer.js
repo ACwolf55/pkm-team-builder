@@ -31,22 +31,6 @@ export default function reducer(state = intialState, action) {
             stateCopy.pokemon[`pokemon_${action.payload.pokeSpot}`] = action.payload
             delete stateCopy.pokemon[`pokemon_${action.payload.pokeSpot}`].pokeSpot
             return stateCopy
-        //     const foundPkmIndex = state.pokemon.findIndex((pokemon) => {
-        //         return pokemon.pkmName.toLowerCase() === action.payload.pkmName.toLowerCase()
-        //     })
-
-        //     if (foundPkmIndex != -1) {
-        //         console.log('found index ' + foundPkmIndex)
-        //         return state
-        //     }
-        //     else {
-        //         const pokemonCopy = [...state.pokemon]
-        //         pokemonCopy.push(action.payload)
-        //             return {
-        //                 ...state,
-        //                 pokemon:pokemonCopy
-        //             }
-        //     }
 
         default:
             return state

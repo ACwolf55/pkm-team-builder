@@ -37,7 +37,7 @@ export default class AllUserTeams extends Component {
         // console.log(this.state)
         let mappedTeamNames = this.state.teamNames.map((el)=>(
             <Link to={`SavedPokemonTeam/${el.pokemon_team_id}`}>
-            <p>{el.team_name}</p>
+            <li>{el.team_name}</li>
             </Link>
         ))
 
@@ -47,7 +47,7 @@ export default class AllUserTeams extends Component {
             <div className='all-pkm-teams'>
                 <h1>ALL USER TEAMS</h1>
                
-                <p>{mappedTeamNames}</p>
+                <ul>{mappedTeamNames}</ul>
             </div>
         )
     }

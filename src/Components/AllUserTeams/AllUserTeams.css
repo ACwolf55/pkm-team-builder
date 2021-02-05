@@ -1,6 +1,7 @@
 .all-pkm-teams{
-    display: flex;
-    flex-direction: row;
+    margin: 100px 0px 0px 0px 0px;
+    text-align: center;
+    
     
  
 
@@ -12,3 +13,4 @@
     flex-direction: column;
 
 }
+

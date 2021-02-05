@@ -35,15 +35,15 @@ class Nav extends Component {
             <nav className='side-nav'>
                 <h1>{user_name}</h1>
                 <h3>id: {id}</h3>
-                <button onClick={this.logoutButton}>Logout</button>
 
                 <Link to='/AllUserTeams' className='all-teams-link'>
-                    <h1>View all Team</h1>
+                    <h1>View all Teams</h1>
                 </Link>
 
                 <Link to='/Chat' className='chat-link'>
-                    <h1>Chatroom</h1>
+                    {/* <h1>Chatroom</h1> */}
                 </Link>
+                <button onClick={this.logoutButton}>Logout</button>
             </nav>
         )
 

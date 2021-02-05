@@ -65,7 +65,7 @@ class Pokemon extends Component {
     } = this.props.pokemon;
     console.log(this.props)
     return (
-      <div className="pokemon-card">
+      <div className="pkm-card">
         <div id="pkm-search-form">
           <form onSubmit={this.getPokemon}>
             <p>
@@ -89,7 +89,7 @@ class Pokemon extends Component {
             </div>
           </div>
         </div>
-
+        {this.state.pkmSprite === '' ? null:
         <div className="pkm-stats">
           <ul>
             <li>HP: {pkmHp}</li>
@@ -100,6 +100,7 @@ class Pokemon extends Component {
             <li>Speed: {pkmSpeed}</li>
           </ul>
         </div>
+      }
       </div>
     );
   }

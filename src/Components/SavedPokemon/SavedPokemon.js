@@ -2,34 +2,33 @@ import React, { Component } from "react";
 import axios from "axios";
 import { connect } from "react-redux";
 import { setPokemon } from "../../redux/pokemonReducer";
-import '../SavedPokemonTeam/SavedPokemonTeam.css'
+import "../SavedPokemonTeam/SavedPokemonTeam.css";
 
 class SavedPokemon extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      pkmName: "",
-      pkmHp: null,
-      pkmAtk: null,
-      pkmDef: null,
-      pkmSpecAtk: null,
-      pkmSpecDef: null,
-      pkmSpeed: null,
-      pkmSprite: "",
-      mountedName: "",
+      // pkmName: "",
+      // pkmHp: null,
+      // pkmAtk: null,
+      // pkmDef: null,
+      // pkmSpecAtk: null,
+      // pkmSpecDef: null,
+      // pkmSpeed: null,
+      // pkmSprite: "",
+
+      pkmObj:null
     };
   }
 
-
-
   componentDidUpdate(prevProps) {
-    if(!prevProps.pokemon && prevProps.pokemon !== this.props.pokemon) {
-      console.log(prevProps)
-      console.log(this.props)
+    if (!prevProps.pokemon && prevProps.pokemon !== this.props.pokemon) {
+      console.log(prevProps);
+      console.log(this.props);
       axios
         .get(`https://pokeapi.co/api/v2/pokemon/${this.props.pokemon}`)
         .then((res) => {
-          console.log(res.data.stats);
+          console.log(res.data);
           this.setState({
             pkmName: this.props.pokemon,
             pkmHp: res.data.stats[0].base_stat,
@@ -39,13 +38,15 @@ class SavedPokemon extends Component {
             pkmSpecDef: res.data.stats[4].base_stat,
             pkmSpeed: res.data.stats[5].base_stat,
             pkmSprite: res.data.sprites.front_default,
+          },()=>{
+            this.props.objectStats(this.state)
           });
-        }).catch(err => console.log(err));
+        });
     }
-
   }
+  
 
-  render() {
+  render(){
     const {
       pkmHp,
       pkmAtk,
@@ -55,9 +56,9 @@ class SavedPokemon extends Component {
       pkmSpeed,
       pkmName,
       pkmSprite,
-    } = this.state;
+    } = this.state
 
-    console.log(this.props);
+    // this.props.objectStats(pkmObj);
     return (
       <div className="saved-pkm-card">
         <div className="pkm-name-sprite">
@@ -65,10 +66,9 @@ class SavedPokemon extends Component {
             <b>{pkmName}</b>
           </h2>
           <div className="pkm-sprite">
-            {this.state.pkmSprite === "" ? null : <img src={pkmSprite} />}
+            {this.state.pkmSprite === "" ? null : <img src={pkmSprite} alt={pkmName}/>}
           </div>
         </div>
-
         <div className="pkm-stats">
           <ul>
             <li>HP: {pkmHp}</li>
@@ -80,8 +80,9 @@ class SavedPokemon extends Component {
           </ul>
         </div>
       </div>
-    );
+    )
   }
 }
+
 
 export default SavedPokemon;

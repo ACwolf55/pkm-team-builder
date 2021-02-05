@@ -20,7 +20,7 @@ export default class Home extends Component {
             <div className='home'>
                 <Nav />
                 <div>
-                    <TeamSummary />
+                    {/* <TeamSummary /> */}
                     <PokemonTeam />
                 </div>
             </div>

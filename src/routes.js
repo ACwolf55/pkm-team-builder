@@ -3,7 +3,7 @@ import {Route, Switch} from 'react-router-dom'
 import Auth from './Components/Auth/Auth'
 import Home from './Components/Home/Home'
 import Chat from './Components/Chat/Chat'
-import AllUserTeams from './Components/AllTeamTeams/AllUserTeams'
+import AllUserTeams from './Components/AllUserTeams/AllUserTeams'
 import SavedPokemonTeam from './Components/SavedPokemonTeam/SavedPokemonTeam'
 
 export default (

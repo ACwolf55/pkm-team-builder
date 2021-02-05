@@ -4,10 +4,10 @@
   
   background-color: #f37a7a;
   border-radius: 25px;
-  width: 75vw;
-  height: 80vh;
+  width: 70vw;
+  height: 65vh;
   padding: 0;
-  margin:50px 0 0px 100px;
+  margin:0px 0 0px 250px;
 
 }
 
@@ -15,8 +15,10 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    height: 60vh;
     width: 65vw;
-    margin:55px 0px 0 120px;
+    margin:0px 0px 0px 0px;
+    padding: 12px 5px 5px 60px;
     
 
 }
@@ -32,9 +34,9 @@
     border-radius: 25px;
     text-align: left;
     color: rgb(255, 255, 255);
-    padding: 20px;
+    padding: 15px 0px 0px 20px ;
     font-size: 11px;
-    margin: -5px 0 0 15px;
+    margin: 5px 5px 5px 5px;
 
     /* #3b4cca  <-blue from header   */
   
@@ -42,7 +44,7 @@
 }
 
 .pkm-sprite{
-    margin: -10px 0 5px 120px;
+    margin: 0px 25px 5px 120px;
     height: 30%;
     width: 30%;
 
