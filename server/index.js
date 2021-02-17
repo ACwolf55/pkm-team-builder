@@ -14,17 +14,9 @@ const app = express();
 
 app.use(express.json());
 
-<<<<<<< HEAD
+
 app.use(express.json())
 app.use(express.static(`${__dirname}/../build`))
-=======
-
-app.use(express.static(`${__dirname}/../build`))
-
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../build/index.html'))
-  })
->>>>>>> 296acd4a462d4a87f008f5cc99c1a3f3ace36b9c
 
 massive({
   connectionString: CONNECTION_STRING,
