@@ -3,6 +3,7 @@ const express = require("express");
 const session = require("express-session");
 const massive = require("massive");
 const bcrypt = require("bcryptjs");
+const path = require('path')
 
 const authCtrl = require("./Controllers/authControllers");
 const userCtrl = require("./Controllers/userControllers");
@@ -13,7 +14,6 @@ const app = express();
 
 app.use(express.json());
 
-const path = require('path')
 
 app.use(express.static(`${__dirname}/../build`))
 
