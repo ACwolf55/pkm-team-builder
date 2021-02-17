@@ -5,6 +5,9 @@ import {connect} from 'react-redux'
 import {updateUser} from '../../redux/userReducer'
 import axios from 'axios'
 
+import Pokeball from './pokeballpng.png'
+
+
 	
 function Header(props) {
 
@@ -19,7 +22,7 @@ function Header(props) {
   return(
     <Link to='/Home' className='home-link'>
      <header>
-      <h1>Pokemon Team Builder <img src="https://www.pikpng.com/pngl/m/59-590145_pokeball-8-bit-pixel-art-pokemon-clipart.png" alt="Pokeball"></img></h1>  
+      <h1 className='title'>Pokemon Team Builder <img className="pkmball" src={Pokeball} alt="Pokeball"></img></h1>  
      </header>
      
     </Link>

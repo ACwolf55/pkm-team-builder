@@ -63,7 +63,7 @@ class Pokemon extends Component {
       mountedName,
       pkmSprite,
     } = this.props.pokemon;
-    console.log(this.props)
+    console.log(this.pkmName)
     return (
       <div className="pkm-card">
         <div id="pkm-search-form">

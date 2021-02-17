@@ -34,7 +34,7 @@ class Nav extends Component {
         return (
             <nav className='side-nav'>
                 <h1>{user_name}</h1>
-                <h3>id: {id}</h3>
+                {/* <h3>id: {id}</h3> */}
 
                 <Link to='/AllUserTeams' className='all-teams-link'>
                     <h1>View all Teams</h1>
