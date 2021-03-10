@@ -18,3 +18,18 @@
     margin: 20px 0 0 0;
 
 }
+
+@media (max-width:700px) {
+    .side-nav{
+      margin-top:7px;
+        flex-direction: column;
+        text-align: center;
+        height: 30vh;
+        width: 92vw;
+        border-width: 10px;
+        border-radius: 25px;
+        margin:7px;
+        padding: 7%;
+    }
+
+}

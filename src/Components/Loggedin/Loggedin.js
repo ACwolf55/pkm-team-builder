@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom';
-import Auth from '../Auth/Auth'
+import Nav from '../Nav/Nav'
 import TeamSummary from '../TeamSummary/TeamSummary'
 import PokemonTeam from '../PokemonTeam/PokemonTeam'
-import './Home.css'
+
 
 export default class Home extends Component {
     constructor() {
@@ -18,7 +18,7 @@ export default class Home extends Component {
     render() {
         return (
             <div className='home'>
-                <Auth />
+                <Nav />
                 <div>
                     {/* <TeamSummary /> */}
                     <PokemonTeam />
@@ -27,4 +27,3 @@ export default class Home extends Component {
         )
     }
 }
-

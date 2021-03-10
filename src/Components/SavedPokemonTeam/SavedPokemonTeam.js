@@ -135,7 +135,7 @@ class SavedPokemonTeam extends Component {
 
         <div className="saved-pkm-team-box">
           <h1>{this.state.teamName}</h1>
-          <div className="saved-pkm-pokemon-team">
+          <div className="saved-pkm-team">
             <SavedPokemon pokemon={pokemon_1} objectStats={this.objectStats} />
             <SavedPokemon pokemon={pokemon_2} objectStats={this.objectStats} />
             <SavedPokemon pokemon={pokemon_3} objectStats={this.objectStats} />
