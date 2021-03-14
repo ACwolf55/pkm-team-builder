@@ -31,17 +31,16 @@ input[type=text] {
 }
 
 
-
 .pkm-sprite{
     margin: -10px 25px 5px 120px;
-    height: 40%;
-    width: 40%;
+    height: 30%;
+    width: 30%;
 
 }
 
 img{
-    height: 175px;
-    width: 175px;
+    height: 125px;
+    width: 125px;
 }
 
 @media (max-width:700px){
