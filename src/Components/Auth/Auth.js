@@ -22,7 +22,7 @@ class Auth extends Component {
       .then(res => {
         this.setState({ user_name: '', password: '' })
         this.props.updateUser(res.data)
-        this.props.history.push('/Home')
+        this.props.history.push('/Loggedin')
       })
       .catch(err => {
         this.setState({ user_name: '', password: '' })
@@ -36,7 +36,7 @@ class Auth extends Component {
       .then(res => {
         this.setState({ user_name: '', password: '' })
         this.props.updateUser(res.data)
-        this.props.history.push('/Home')
+        this.props.history.push('/Loggedin')
       })
       .catch(err => {
         this.setState({ user_name: '', password: '' })
