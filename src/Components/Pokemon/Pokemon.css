@@ -28,23 +28,16 @@ input[type=text] {
     flex-direction: row;
     justify-content: space-around;
     text-transform: capitalize;
-}
-
-
-.pkm-sprite{
-    margin: -10px 25px 5px 120px;
-    height: 30%;
-    width: 30%;
-
+    margin:-5px 0px 10px -10px;
 }
 
 img{
-    height: 125px;
-    width: 125px;
+    height: 95px;
+    width: 95px;
 }
 
-@media (max-width:700px){
-    form{
+ @media (max-width:700px){
+    form{ 
         display: flex;
         flex-direction: row;
         margin: -2px -10px 10px 0px;
@@ -90,4 +83,4 @@ img{
 
     }
 
-}
+} 

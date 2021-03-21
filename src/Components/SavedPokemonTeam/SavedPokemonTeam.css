@@ -1,24 +1,24 @@
 .saved-pkm-team-box{
     display: flex;
   flex-direction: row;
+  justify-content: center;
   
-  background-color: #f37a7a;
+  /* background-color: #f37a7a; */
   border-radius: 25px;
-  width: 70vw;
-  height: 65vh;
-  padding: 0;
-  margin:0px 0 0px 250px;
+  width: 80vw;
+  height: 64vh;
+  margin: 0px 0px 0px 150px;
 
 }
 
 .saved-pkm-team{
     display: flex;
     flex-direction: row;
+    justify-content: center;
     flex-wrap: wrap;
-    height: 60vh;
     width: 65vw;
-    margin:0px 0px 0px 0px;
-    padding: 12px 5px 5px 50px;
+    /* margin:0px 0px 0px 0px;
+    padding: 12px 5px 5px 35px; */
     
 
 }
@@ -27,8 +27,8 @@
     display: flex;
     flex-direction: column;
     background-color: #d13b3b;
-    height:30vh;
-    width: 20vw;
+    height:32vh;
+    width: 21vw;
     border: solid #000000;
     border-width: 3px;
     border-radius: 25px;

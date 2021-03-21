@@ -23,7 +23,7 @@ class Pokemon extends Component {
   getPokemon = (e) => {
     e.preventDefault();
      axios
-      .get(`https://pokeapi.co/api/v2/pokemon/${this.state.pkmName}`)
+      .get(`https://pokeapi.co/api/v2/pokemon/${this.state.pkmName.toLowerCase()}`)
       .then((res) => {
         const pkmObj = {
           pkmName: this.state.pkmName,
@@ -37,7 +37,7 @@ class Pokemon extends Component {
 
           pokeSpot: this.props.pokeSpot,
 
-          mountedName: this.state.pkmName,
+          mountedName: this.state.pkmName.toLowerCase(),
         };
         this.setState({
             pkmSprite: res.data.sprites.front_default
