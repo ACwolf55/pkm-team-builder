@@ -35,7 +35,7 @@ border-radius: 25px;
 margin:10px 5px 0px 5px ;
 }
 
-@media (max-width:700px) {
+@media (max-width:1100px) {
   .no-auth{
     margin-top:7px;
       flex-direction: column;

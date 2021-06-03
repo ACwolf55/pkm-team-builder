@@ -19,7 +19,7 @@
 
 }
 
-@media (max-width:700px) {
+@media (max-width:1100px) {
     .side-nav{
       margin-top:7px;
         flex-direction: column;

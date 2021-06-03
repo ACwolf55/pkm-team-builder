@@ -81,11 +81,11 @@ class Pokemon extends Component {
             </p>
           </form>
           <div className="pkm-name-sprite">
-            <h2>
+            <h2 className='pkm_name'>
               <b>{mountedName}</b>
             </h2>
             <div className="pkm-sprite">
-              {this.state.pkmSprite === '' ? null : <img src={pkmSprite} /> }
+              {this.state.pkmSprite === '' ? null : <img id='pkm-sprite' src={pkmSprite} /> }
             </div>
           </div>
         </div>
