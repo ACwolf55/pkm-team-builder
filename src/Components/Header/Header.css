@@ -23,7 +23,7 @@ margin: -25px 0 0px 0 ;
 }
 
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   header{
     height:13vh;
     width:100vw;

@@ -16,7 +16,7 @@
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    width: 65vw;
+    width: 80vw;
     /* margin:0px 0px 0px 0px;
     padding: 12px 5px 5px 35px; */
     
@@ -28,7 +28,7 @@
     flex-direction: column;
     background-color: #d13b3b;
     height:32vh;
-    width: 21vw;
+    width: 25vw;
     border: solid #000000;
     border-width: 3px;
     border-radius: 25px;
@@ -50,7 +50,7 @@
 
 }
 
-@media (max-width:700px){
+@media (max-width:900px){
 
     .saved-pkm-team-box{
         flex-direction: column;

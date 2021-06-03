@@ -23,7 +23,7 @@ th,td{
     border: 1px solid rgb(169, 40, 40);
 }
 
-@media (max-width:700px) {
+@media (max-width:900px) {
     table{
 
         margin: 5px 0px 0px 0px;
