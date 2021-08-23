@@ -25,6 +25,7 @@ class Pokemon extends Component {
      axios
       .get(`https://pokeapi.co/api/v2/pokemon/${this.state.pkmName.toLowerCase()}`)
       .then((res) => {
+        console.log(res.data)
         const pkmObj = {
           pkmName: this.state.pkmName,
           pkmHp: res.data.stats[0].base_stat,
