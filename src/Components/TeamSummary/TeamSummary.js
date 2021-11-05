@@ -12,44 +12,6 @@ export default class TeamSummary extends Component {
     };
   }
 
-  componentDidMount() {
-    // let highestSpd = [];
-    // let highestHp = [];
-    // let highestTotal = [];
-    // console.log(this.props.pkmTeam.sort)
-    // let filterAtk = this.props.pkmTeam.sort((pkmA, pkmB) => {
-    //     console.log('KLKKL',pkmA, pkmB)
-    //   return pkmB.pkmAtk - pkmA.pkmAtk;
-    // });
-    // console.log(filterAtk);
-    // let filterSpd = this.props;
-    // let filterHp = this.props;
-    // let filterTotal = this.props;
-  }
-
-  
-
-  findhHighAtk = () => {
-    const {
-      pokemon_1,
-      pokemon_2,
-      pokemon_3,
-      pokemon_4,
-      pokemon_5,
-      pokemon_6,
-    } = this.props;
-
-    let highAtk = Math.max(
-      pokemon_1.pkmAtk,
-      pokemon_2.pkmAtk,
-      pokemon_3.pkmAtk,
-      pokemon_4.pkmAtk,
-      pokemon_5.pkmAtk,
-      pokemon_6.pkmAtk
-    );
-    return highAtk;
-  };
-
   render() {
     console.log(this.props.pkmTeam[0]);
 

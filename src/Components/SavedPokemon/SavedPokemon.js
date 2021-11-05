@@ -8,14 +8,14 @@ class SavedPokemon extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // pkmName: "",
-      // pkmHp: null,
-      // pkmAtk: null,
-      // pkmDef: null,
-      // pkmSpecAtk: null,
-      // pkmSpecDef: null,
-      // pkmSpeed: null,
-      // pkmSprite: "",
+      pkmName: "",
+      pkmHp: null,
+      pkmAtk: null,
+      pkmDef: null,
+      pkmSpecAtk: null,
+      pkmSpecDef: null,
+      pkmSpeed: null,
+      pkmSprite: "",
 
       pkmObj:null
     };
@@ -26,7 +26,7 @@ class SavedPokemon extends Component {
       console.log(prevProps);
       console.log(this.props);
       axios
-        .get(`https://pokeapi.co/api/v2/pokemon/${this.props.pokemon}`)
+        .get(`https://pokeapi.co/api/v2/pokemon/${this.props.pokemon.toLowerCase()}`)
         .then((res) => {
           console.log(res.data);
           this.setState({

@@ -8,7 +8,7 @@ table{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
     border-width: 3px;
-    border-radius: 25px;
+    /* border-radius: 25px; */
     height:18vh;
     width: 55vw;
     background-color: #d13b3b;

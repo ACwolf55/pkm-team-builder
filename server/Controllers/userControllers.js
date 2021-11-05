@@ -28,6 +28,8 @@ module.exports = {
         const db = req.app.get('db')
         const {teamid} = req.params
         const pkmTeam = await db.get_team([teamid])
+        console.log(pkmTeam)
+    
         return res.status(201).send(pkmTeam)
     },
 

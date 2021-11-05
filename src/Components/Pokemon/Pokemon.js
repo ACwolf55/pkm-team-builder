@@ -49,7 +49,7 @@ class Pokemon extends Component {
 
   pkmNameInput = (e) => {
     this.setState({
-      pkmName: e.target.value,
+      pkmName: e.target.value
     });
   };
 

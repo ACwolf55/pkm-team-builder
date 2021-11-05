@@ -44,7 +44,7 @@ app.get("/auth/session", authCtrl.getSession);
 // User Teams Endpoints:
 app.post("/user/team", userCtrl.saveTeam);
 app.get("/user/userTeamNames", userCtrl.userTeamNames);
-app.put("/user/team/SavedTeam/:teamid", userCtrl.getTeam);
+app.get("/user/team/SavedTeam/:teamid", userCtrl.getTeam);
 
 // app.get('/user/user_teams',userCtrl.allTeams)
 // app.put('/user/:id/team/:id',userCtrl.editTeam)

@@ -28,6 +28,7 @@ module.exports = {
     const { user_name, password } = req.body
     const foundUser = await req.app.get('db').login([user_name])
     const user = foundUser[0]
+    console.log(user)
     if (!user) {
       return res.status(401).send('User not found')
     }
