@@ -8,21 +8,22 @@ const path = require('path')
 const authCtrl = require("./Controllers/authControllers");
 const userCtrl = require("./Controllers/userControllers");
 
-const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
+const { PORT, DATABASE_URL, SESSION_SECRET } = process.env;
 
 const app = express();
 
 app.use(express.json())
 app.use(express.static(`${__dirname}/../build`))
+// app.use(express.static(path.resolve(`${__dirname}/../build`))) for heroku?
 
 massive({
-  connectionString: CONNECTION_STRING,
+  connectionString: DATABASE_URL,
   ssl: { rejectUnauthorized: false },
 }).then((db) => {
   app.set("db", db);
   console.log("db ready!");
 
-  app.listen(SERVER_PORT, console.log(`RUNNING @ PORT ${SERVER_PORT}`));
+  app.listen(PORT, console.log(`RUNNING @ PORT ${PORT}`));
 });
 
 app.use(
@@ -49,3 +50,9 @@ app.get("/user/team/SavedTeam/:teamid", userCtrl.getTeam);
 // app.get('/user/user_teams',userCtrl.allTeams)
 // app.put('/user/:id/team/:id',userCtrl.editTeam)
 // app.delete('/user/:id/team/:id',userCtrl.deleteTeam)
+
+//for Deployment
+
+app.get('/*',(req,res)=>{
+  res.sendFile(path.join(__dirname,'../build','index.html'))
+})
