@@ -13,8 +13,10 @@ const { PORT, DATABASE_URL, SESSION_SECRET } = process.env;
 const app = express();
 
 app.use(express.json())
-app.use(express.static(`${__dirname}/../build`))
-// app.use(express.static(path.resolve(`${__dirname}/../build`))) for heroku?
+// app.use(express.static(`${__dirname}/../build`))
+
+//for heroku
+app.use(express.static(path.resolve(`${__dirname}/../build`))) 
 
 massive({
   connectionString: DATABASE_URL,
