@@ -18,6 +18,8 @@ class Auth extends Component {
 
   register = () => {
     const { user_name, password } = this.state
+    if (password === ''){alert("Password cannot be empty")}
+    else{
     axios.post('/auth/register', { user_name, password })
       .then(res => {
         this.setState({ user_name: '', password: '' })
@@ -28,6 +30,8 @@ class Auth extends Component {
         this.setState({ user_name: '', password: '' })
         alert(err.response.request.response)
       })
+      console.log('axios test')
+    }
   }
 
   login = () => {
@@ -48,7 +52,6 @@ class Auth extends Component {
   
 
   handleUsernameInput = (value) => {
-    console.log(value)
     this.setState({ user_name: value})
 
   }

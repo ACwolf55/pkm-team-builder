@@ -20,7 +20,7 @@ function Header(props) {
     <Link to="/" className="home-link">
       <header>
         <h1 className="title">
-          Pokemon Team Builder{" "}
+          Pokemon Team Builder
           <img className="pkmball" src={Pokeball} alt="Pokeball"></img>
         </h1>
       </header>
