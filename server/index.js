@@ -54,7 +54,6 @@ app.get("/user/team/SavedTeam/:teamid", userCtrl.getTeam);
 // app.delete('/user/:id/team/:id',userCtrl.deleteTeam)
 
 //for Deployment
-
 app.get('/*',(req,res)=>{
   res.sendFile(path.join(__dirname,'../build','index.html'))
 })
