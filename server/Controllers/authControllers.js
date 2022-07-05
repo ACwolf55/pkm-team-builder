@@ -54,7 +54,11 @@ module.exports = {
     else{
       res.sendStatus(200)
     }
-  }
+  },
+
+  test: (req,res) => {
+   res.send('test')
+  },
 
   
 }

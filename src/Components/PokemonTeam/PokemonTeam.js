@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Compnento } from 'react';
 import axios from 'axios'
 import Pokemon from '../Pokemon/Pokemon'
 import { connect } from 'react-redux'
