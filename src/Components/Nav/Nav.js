@@ -33,7 +33,7 @@ class Nav extends Component {
         const { user_name, id } = this.props.userReducer.user
         return (
             <nav className='side-nav'>
-                <h1>{user_name}</h1>
+                <h3>{user_name}</h3>
                 {/* <h3>id: {id}</h3> */}
 
                 <Link to='/AllUserTeams' className='all-teams-link'>

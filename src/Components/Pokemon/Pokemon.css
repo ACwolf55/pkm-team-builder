@@ -37,12 +37,12 @@ input[type=text] {
 }
 
 .pkm-sprite{
-    margin: 0px 0px 0px 0px;
+   
 }
 
 img{
-    height: 95px;
-    width: 95px;
+    height: 105px;
+    width: 105px;
 }
 
  @media (max-width:1100px){
