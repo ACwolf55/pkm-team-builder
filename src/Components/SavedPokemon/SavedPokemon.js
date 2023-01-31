@@ -62,14 +62,14 @@ class SavedPokemon extends Component {
     return (
       <div className="saved-pkm-card">
         <div className="pkm-name-sprite">
-          <h2>
-            <b>{pkmName}</b>
-          </h2>
           <div className="pkm-sprite">
             {this.state.pkmSprite === "" ? null : <img src={pkmSprite} alt={pkmName}/>}
           </div>
         </div>
         <div className="pkm-stats">
+          <h2>
+            <b>{pkmName}</b>
+          </h2>
           <ul>
             <li>HP: {pkmHp}</li>
             <li>Attack: {pkmAtk}</li>

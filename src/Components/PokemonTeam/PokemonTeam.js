@@ -16,7 +16,12 @@ class PokemonTeam extends Component {
     saveTeam = () => {
         const { pokemon } = this.props.pokemonReducer
         console.log(pokemon.pokemon_1.pkmName)
-
+        const { user_name, id } = this.props.userReducer.user
+        if(!user_name){
+            alert('login to save team')
+        }else if(this.state.teamName=''){
+            alert('enter team name')
+        }else{
 
         axios.post('/user/team/', {
             pokemon_1: pokemon.pokemon_1.pkmName, pokemon_2: pokemon.pokemon_2.pkmName, pokemon_3: pokemon.pokemon_3.pkmName, pokemon_4: pokemon.pokemon_4.pkmName, pokemon_5: pokemon.pokemon_5.pkmName, pokemon_6: pokemon.pokemon_6.pkmName, team_name: this.state.teamName
@@ -29,6 +34,8 @@ class PokemonTeam extends Component {
                 })
             })
             .catch(err => { alert(err.response.request.response) })
+
+        }
         }
 
 

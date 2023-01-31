@@ -22,8 +22,6 @@
 }
 
 .pkm-card{
-  display: flex;
-  flex-direction: column;
   background-color: #d13b3b;
   height:34vh;
   width: 18vw;

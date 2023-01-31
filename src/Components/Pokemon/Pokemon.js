@@ -48,6 +48,7 @@ class Pokemon extends Component {
   };
 
   pkmNameInput = (e) => {
+  
     this.setState({
       pkmName: e.target.value
     });
@@ -81,17 +82,13 @@ class Pokemon extends Component {
               <button type="submit">Find</button>
             </p>
           </form>
-          <div className="pkm-name-sprite">
-            <h2 className='pkm_name'>
-              <b>{mountedName}</b>
-            </h2>
-            <div className="pkm-sprite">
-              {this.state.pkmSprite === '' ? null : <img id='pkm-sprite' src={pkmSprite} /> }
-            </div>
           </div>
-        </div>
         {this.state.pkmSprite === '' ? null:
+          <div className="pkm-stats-sprite">
         <div className="pkm-stats">
+            <h2 className='pkm-name'>
+            <b>{mountedName}</b>
+            </h2>
           <ul>
             <li>HP: {pkmHp}</li>
             <li>Attack: {pkmAtk}</li>
@@ -101,6 +98,10 @@ class Pokemon extends Component {
             <li>Speed: {pkmSpeed}</li>
           </ul>
         </div>
+    
+              {this.state.pkmSprite === '' ? <p id='pkm-search-intro'>*type in pokemon name and click find to get pokemon stats!</p> : <img id='pkm-sprite' src={pkmSprite} /> }
+    
+            </div>
       }
       </div>
     );

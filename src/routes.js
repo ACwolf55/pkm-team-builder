@@ -1,11 +1,12 @@
 import React from 'react'
-import {Route, Switch} from 'react-router-dom'
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import Auth from './Components/Auth/Auth'
 import Home from './Components/Home/Home'
 import Chat from './Components/Chat/Chat'
 import AllUserTeams from './Components/AllUserTeams/AllUserTeams'
 import SavedPokemonTeam from './Components/SavedPokemonTeam/SavedPokemonTeam'
 import Loggedin from './Components/Loggedin/Loggedin'
+import axios from 'axios'
 
 export default (
     
@@ -18,3 +19,6 @@ export default (
     </Switch>
 
 )
+
+
+
