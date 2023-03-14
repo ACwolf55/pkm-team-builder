@@ -25,7 +25,7 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "go": "set PORT=3000 && react-scripts --openssl-legacy-provider start",
+    "go": "set PORT=3000 && react-scripts start",
     "start": "node server/index.js && npm build",
     "build": "react-scripts --openssl-legacy-provider build",
     "test": "react-scripts test",

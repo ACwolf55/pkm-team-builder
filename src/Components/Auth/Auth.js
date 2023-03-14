@@ -74,6 +74,7 @@ class Auth extends Component {
           value={user_name}
           onChange={e => this.handleUsernameInput(e.target.value)} />
         <input
+         className='pass'
           type="password"
           placeholder="Password"
           value={password}

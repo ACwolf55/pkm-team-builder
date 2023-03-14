@@ -51,20 +51,25 @@ input[type=text] {
  @media (max-width:1100px){
     form{ 
         display: flex;
-        flex-direction: row;
-        margin: -2px -10px 10px 0px;
+        flex-direction: column;
+        justify-content:center ;
+        
     
+    }
+
+    .pokemon{
+        align-items: center;
     }
     
     input[type=text] {
-        width: 85%;
+        width: 90%;
     
     }
     
     .pkm-stats{
-        margin: 0px 0px 0px 0px;
         font-size: 10px;
-    
+        margin-left:20px ;
+        margin-left: 20px;
     }
     
     #pkm-search-form{
@@ -75,16 +80,23 @@ input[type=text] {
     
     .pkm-name-sprite{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-around;
         text-transform: capitalize;
-        margin: -20px 0px 0px 0px;
+       
+    }
+
+    .pkm-stats-sprite{
+        margin-top: 0;
+        margin-left: 20px;
+        flex-direction: column;
+        justify-content: flex-end;
     }
     
     
     
     .pkm-sprite{
-        margin: 0px 25px 5px 0px;
+       
         height: 40px;
         width: 40px;
     }
