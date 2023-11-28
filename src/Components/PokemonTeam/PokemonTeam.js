@@ -19,10 +19,10 @@ class PokemonTeam extends Component {
         const { user_name, id } = this.props.userReducer.user
         if(!user_name){
             alert('login to save team')
-        }else if(this.state.teamName=''){
+        }else if(this.state.teamName==''){
             alert('enter team name')
         }else{
-
+            console.log(this.state.teamName)
         axios.post('/user/team/', {
             pokemon_1: pokemon.pokemon_1.pkmName, pokemon_2: pokemon.pokemon_2.pkmName, pokemon_3: pokemon.pokemon_3.pkmName, pokemon_4: pokemon.pokemon_4.pkmName, pokemon_5: pokemon.pokemon_5.pkmName, pokemon_6: pokemon.pokemon_6.pkmName, team_name: this.state.teamName
         })

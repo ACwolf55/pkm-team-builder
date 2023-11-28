@@ -3,7 +3,7 @@ module.exports = {
     saveTeam: async (req, res) => {
         const db = req.app.get('db')
         // console.log(req.session.user)
-        console.log(req.body)
+        console.log(req.body,'reqbody')
         const { pokemon_1, pokemon_2, pokemon_3, pokemon_4, pokemon_5, pokemon_6, team_name } = req.body
             if(!req.session.user){
                 res.status(403).send('Need to log in to save team!')
